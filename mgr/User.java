@@ -19,11 +19,15 @@ public class User implements Manageable {
 
     @Override
     public void print() {
-        System.out.printf("[%s] (%d¡°)\n", id, waitPoint);
+        System.out.printf("[%s] (%dÏ†ê)\n", id, waitPoint);
     }
 
     @Override
     public boolean matches(String kwd) {
         return false;
+    }
+
+    public String getId() {
+        return id;
     }
 }

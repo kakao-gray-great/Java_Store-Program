@@ -16,7 +16,11 @@ public class Item implements Manageable {
 
     @Override
     public void print() {
-        System.out.printf("[%s] %s (%d)", code, itemName, price);
+        System.out.printf("[%s] %s (%d)\n", code, itemName, price);
+    }
+
+    public void print(int count) {
+        System.out.printf("[%s] %d¿ø x %d°³ = %d¿ø\n", itemName, price, count, (price * count));
     }
 
     @Override
