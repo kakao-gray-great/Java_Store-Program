@@ -25,6 +25,8 @@ public class Store {
     
     private void run() {
        readAll();
+       
+       
     }
 
     public static void main(String[] args) {
