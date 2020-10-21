@@ -19,7 +19,7 @@ public class User implements Manageable {
 
     @Override
     public void print() {
-
+        System.out.printf("[%s] (%d¡°)\n", id, waitPoint);
     }
 
     @Override
