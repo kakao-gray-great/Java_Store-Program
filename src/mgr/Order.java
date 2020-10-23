@@ -60,12 +60,23 @@ public class Order implements Manageable {
     	return point;
     }
 
-    @Override
+    @Override    
     public void print() {
-        System.out.printf("[주문아이디: %d] 사용자: %s - 포인트 : %d점", orderId, user.getId(), point);
+    	print(false);
+    }
+    
+    public void print(boolean bSpaced) {
+    	String space = "";
+    	if (bSpaced)
+    		space = "    ";
+        System.out.printf(space + "[주문아이디: %d] 사용자: %s - 포인트 : %d점 ", orderId, user.getId(), point);
+        
+        if (!payed)
+        	System.out.printf("  (결재대기)");
+        
         System.out.println();
         for (OrderedItem ordereditem : orderItemList) {
-            System.out.print("\t");
+            System.out.print(space+"\t");
             ordereditem.print();
         }
     }

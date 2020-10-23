@@ -33,8 +33,6 @@ public class Item implements Manageable {
     public boolean matches(String kwd) {
         if (code.contentEquals(kwd))
             return true;
-        if (itemName.contentEquals(kwd))
-            return true;
         return false;
     }
 

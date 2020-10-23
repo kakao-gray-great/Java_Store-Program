@@ -22,10 +22,15 @@ public class User implements Manageable {
     public void print() {
         System.out.printf("[%s] (%d¡°)", id, waitPoint);
         System.out.println();
+        for (Order order: orderList) {
+        	order.print(true);
+        }
     }
 
     @Override
     public boolean matches(String kwd) {
+    	if (id.contentEquals(kwd))
+    		return true;
         return false;
     }
     

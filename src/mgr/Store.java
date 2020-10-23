@@ -40,15 +40,6 @@ public class Store {
     	System.out.println();
     }
 
-    Item findItem(String code) {
-        for (Manageable item: itemMgr.mList) {
-            if (item.matches(code)) {
-                return (Item)item;
-            }
-        }
-        return null;
-    }
-
     private void run() {
        readAll();
        printItemList();
