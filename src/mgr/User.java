@@ -15,16 +15,23 @@ public class User implements Manageable {
         id = scan.next();
         pwd = scan.next();
         point = scan.nextInt();
+        waitPoint = point;
     }
 
     @Override
     public void print() {
-        System.out.printf("[%s] (%dÏ†ê)\n", id, waitPoint);
+        System.out.printf("[%s] (%d¡°)", id, waitPoint);
+        System.out.println();
     }
 
     @Override
     public boolean matches(String kwd) {
         return false;
+    }
+    
+    public void addOrder(Order order) {
+    	orderList.add(order);
+    	waitPoint += order.getPoint();
     }
 
     public String getId() {

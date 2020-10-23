@@ -7,17 +7,17 @@ public class Store {
     static Manager orderMgr = new Manager();
 
     private void readAll() {
-       userMgr.readAll("users.txt", new Factory() {
+       userMgr.readAll("data/users.txt", new Factory() {
           public Manageable create() {
              return new User();
           }
        });
-       itemMgr.readAll("items.txt", new Factory() {
+       itemMgr.readAll("data/items.txt", new Factory() {
           public Manageable create() {
              return new Item();
           }
        });
-       orderMgr.readAll("order.txt", new Factory() {
+       orderMgr.readAll("data/order.txt", new Factory() {
           public Manageable create() {
              return new Order();
           }

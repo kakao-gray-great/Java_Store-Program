@@ -16,11 +16,17 @@ public class Item implements Manageable {
 
     @Override
     public void print() {
-        System.out.printf("[%s] %s (%d)\n", code, itemName, price);
+    	print(true);
     }
 
-    public void print(int count) {
-        System.out.printf("[%s] %d원 x %d개 = %d원\n", itemName, price, count, (price * count));
+    public void print(boolean bOriginal) {
+    	if (bOriginal) {
+            System.out.printf("[%s] %s (%d) ", code, itemName, price);
+            System.out.println();
+    	}
+    	else {
+    		System.out.printf("[%s] %d원 ", itemName, price);
+    	}
     }
 
     @Override
@@ -32,4 +38,7 @@ public class Item implements Manageable {
         return false;
     }
 
+    public int getPrice() {
+    	return price;
+    }
 }
